@@ -1,5 +1,7 @@
 package com.qa;
 
+import com.qa.exceptions.InvalidToggleException;
+
 import java.util.ArrayList;
 
 /**
@@ -40,37 +42,24 @@ public class App {
             try {
                 System.out.println(device.switchOn());
             }
-            catch(Exception e) {
-                System.err.println(e);
+            catch(InvalidToggleException e) {
+                System.err.println(e.getMessage());
             }
             finally {
                 System.out.println("you attempted to turn on the devices");
             }
         }
+
         OfficeChair player1 = new OfficeChair(12.23, 12);
         OfficeChair player2 = new OfficeChair(10.51, 14);
-        System.out.println(OfficeChair.chairRaceDistance(player1,player2, 122));
+        
+        System.out.println(OfficeChair.chairRaceDistance(player1, player2, 122));
 
-
-
-
-//        for(ISwitchable device : electronics){
-//            try {
-//                System.out.println(device.switchOff());
-//            }
-//            catch(Exception e) {
-//                System.out.println(e.getMessage());
-//            }
-//            finally {
-//                System.out.println("you attempted to turn off the devices");
-//            }
-//        }
-//
         for(ISwitchable device : electronics){
             try{
                 System.out.println(device.switchOn());
-            }catch(Exception e){
-                System.err.println(e);
+            }catch(InvalidToggleException e){
+                System.err.println(e.getMessage());
             }
         }
 
