@@ -47,6 +47,12 @@ public class App {
                 System.out.println("you attempted to turn on the devices");
             }
         }
+        OfficeChair player1 = new OfficeChair(12.23, 12);
+        OfficeChair player2 = new OfficeChair(10.51, 14);
+        System.out.println(OfficeChair.chairRaceDistance(player1,player2, 122));
+
+
+
 
 //        for(ISwitchable device : electronics){
 //            try {
