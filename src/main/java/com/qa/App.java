@@ -1,5 +1,6 @@
 package com.qa;
 
+import com.qa.exceptions.InvalidTimeException;
 import com.qa.exceptions.InvalidToggleException;
 
 import java.util.ArrayList;
@@ -32,36 +33,59 @@ public class App {
     }
 
     private static void katieArchie() {
-        Lamp smallLamp = new Lamp(500.00);
-        Speaker smallSpeaker = new Speaker(123.321);
-        ArrayList<ISwitchable> electronics = new ArrayList<>();
-        electronics.add(smallLamp);
-        electronics.add(smallSpeaker);
+//        Lamp smallLamp = new Lamp(500.00);
+//        Speaker smallSpeaker = new Speaker(123.321);
+//        ArrayList<ISwitchable> electronics = new ArrayList<>();
+//        electronics.add(smallLamp);
+//        electronics.add(smallSpeaker);
+//
+//        for(ISwitchable device : electronics){
+//            try {
+//                System.out.println(device.switchOn());
+//            }
+//            catch(InvalidToggleException e) {
+//                System.err.println(e.getMessage());
+//            }
+//            finally {
+//                System.out.println("you attempted to turn on the devices");
+//            }
+//        }
 
-        for(ISwitchable device : electronics){
-            try {
-                System.out.println(device.switchOn());
-            }
-            catch(InvalidToggleException e) {
-                System.err.println(e.getMessage());
-            }
-            finally {
-                System.out.println("you attempted to turn on the devices");
-            }
+        OfficeChair katie = new OfficeChair(19, 100);
+        OfficeChair archie = new OfficeChair(29, 14);
+
+        try{
+            System.out.println(OfficeChair.chairRaceDistance(katie, archie, 100));
+        }catch(Exception e){
+            System.err.println(e.getMessage());
         }
 
-        OfficeChair player1 = new OfficeChair(12.23, 12);
-        OfficeChair player2 = new OfficeChair(10.51, 14);
-        
-        System.out.println(OfficeChair.chairRaceDistance(player1, player2, 122));
 
-        for(ISwitchable device : electronics){
-            try{
-                System.out.println(device.switchOn());
-            }catch(InvalidToggleException e){
-                System.err.println(e.getMessage());
-            }
-        }
+
+
+
+
+
+//        for(ISwitchable device : electronics){
+//            try {
+//                System.out.println(device.switchOff());
+//            }
+//            catch(Exception e) {
+//                System.out.println(e.getMessage());
+//            }
+//            finally {
+//                System.out.println("you attempted to turn off the devices");
+//            }
+//        }
+//
+
+//        for(ISwitchable device : electronics){
+//            try{
+//                System.out.println(device.switchOn());
+//            }catch(InvalidToggleException e){
+//                System.err.println(e.getMessage());
+//            }
+//        }
 
     }
 }

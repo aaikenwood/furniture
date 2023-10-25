@@ -38,6 +38,7 @@ public class OfficeChair extends Chair{
 
     public static String chairRaceDistance(OfficeChair player1Chair, OfficeChair player2Chair, double time)
             throws InvalidTimeException {
+
         if (time < 0) throw new InvalidTimeException("You can't have negative time!");
         try {
             double player1Distance = player1Chair.calculateRaceDistance(time);
@@ -52,5 +53,6 @@ public class OfficeChair extends Chair{
             System.err.println(e.getMessage());
             return "The race was cancelled";
         }
+
     }
 }
