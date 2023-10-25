@@ -40,7 +40,7 @@ public class Speaker extends Furniture implements ISwitchable {
         if (isOn) throw new InvalidToggleException(String.format("You can't turn the %s on because it is already on", this.getFurnitureType()));
         isOn = true;
         setVolume(getMaxVolume());
-        return String.format("This %s has been turned off and the brightness is %.2f", this.getFurnitureType(), this.getVolume());
+        return String.format("This %s has been turned on and the brightness is %.2f", this.getFurnitureType(), this.getVolume());
     }
     @Override
     public String switchOff() throws InvalidToggleException {

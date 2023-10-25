@@ -10,7 +10,6 @@ public class App {
     public static void main( String[] args ) {
 //        kyleArchie();
         katieArchie();
-        System.out.println("hi test test test");
     }
 
     private static void kyleArchie() {
@@ -42,30 +41,30 @@ public class App {
                 System.out.println(device.switchOn());
             }
             catch(Exception e) {
-                System.out.println(e.getMessage());
+                System.err.println(e);
             }
             finally {
                 System.out.println("you attempted to turn on the devices");
             }
         }
 
-        for(ISwitchable device : electronics){
-            try {
-                System.out.println(device.switchOff());
-            }
-            catch(Exception e) {
-                System.out.println(e.getMessage());
-            }
-            finally {
-                System.out.println("you attempted to turn off the devices");
-            }
-        }
-
+//        for(ISwitchable device : electronics){
+//            try {
+//                System.out.println(device.switchOff());
+//            }
+//            catch(Exception e) {
+//                System.out.println(e.getMessage());
+//            }
+//            finally {
+//                System.out.println("you attempted to turn off the devices");
+//            }
+//        }
+//
         for(ISwitchable device : electronics){
             try{
                 System.out.println(device.switchOn());
             }catch(Exception e){
-                System.out.println(e);
+                System.err.println(e);
             }
         }
 
