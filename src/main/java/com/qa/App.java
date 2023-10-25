@@ -31,7 +31,10 @@ public class App {
 
     private static void katieArchie() {
         Lamp smallLamp = new Lamp(500.00);
+        Speaker smallSpeaker = new Speaker(123.321);
         System.out.println(smallLamp.switchOn());
+        System.out.println(smallSpeaker.switchOn());
         System.out.println(smallLamp.switchOff());
+        System.out.println(smallSpeaker.switchOff());
     }
 }
