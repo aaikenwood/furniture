@@ -6,5 +6,6 @@ public enum ROOM {
     Bathroom,
     livingRoom,
     diningRoom,
-    Shed
+    Shed,
+    westminsterOffice
 }

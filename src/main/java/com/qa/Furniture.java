@@ -3,7 +3,7 @@ package com.qa;
 public abstract class Furniture { //flatpack
 
     public Furniture(){
-        this(MATERIAL.Wood,ROOM.Shed,0, "furniture");
+        this(MATERIAL.Wood, ROOM.Shed,0, "furniture");
     }
 
     public String getFurnitureType() {
