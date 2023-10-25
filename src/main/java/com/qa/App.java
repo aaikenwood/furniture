@@ -32,9 +32,16 @@ public class App {
     private static void katieArchie() {
         Lamp smallLamp = new Lamp(500.00);
         Speaker smallSpeaker = new Speaker(123.321);
-        System.out.println(smallLamp.switchOn());
-        System.out.println(smallSpeaker.switchOn());
-        System.out.println(smallLamp.switchOff());
-        System.out.println(smallSpeaker.switchOff());
+        ArrayList<ISwitchable> electronics = new ArrayList<>();
+        electronics.add(smallLamp);
+        electronics.add(smallSpeaker);
+
+        for(ISwitchable device : electronics){
+            System.out.println(device.switchOn());
+        }
+        for(ISwitchable device : electronics){
+            System.out.println(device.switchOff());
+        }
+
     }
 }
