@@ -10,6 +10,7 @@ public class App {
     public static void main( String[] args ) {
 //        kyleArchie();
         katieArchie();
+        System.out.println("hi test test test");
     }
 
     private static void kyleArchie() {
