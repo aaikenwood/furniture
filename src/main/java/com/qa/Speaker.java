@@ -1,17 +1,21 @@
 package com.qa;
 
-public class Speaker extends Furniture implements ISwitchable{
-    public Speaker(double maxVolume){
+import com.qa.exceptions.InvalidToggleException;
+
+public class Speaker extends Furniture implements ISwitchable {
+    public Speaker(double maxVolume) {
         super();
         this.maxVolume = maxVolume;
         setVolume(0);
         this.setFurnitureType("Speaker");
         this.setMaterial(MATERIAL.Wood);
+        isOn = false;
     }
 
     public double getVolume() {
         return volume;
     }
+
     public void setVolume(double volume) {
         if (volume >= 0 && volume <= this.getMaxVolume()) {
             this.volume = volume;
@@ -22,6 +26,7 @@ public class Speaker extends Furniture implements ISwitchable{
         return maxVolume;
     }
 
+    private boolean isOn;
     private double volume;
     private double maxVolume;
 
@@ -31,13 +36,29 @@ public class Speaker extends Furniture implements ISwitchable{
     }
 
     @Override
-    public String switchOn() {
-        setVolume(maxVolume);
-        return String.format("This %s has been turned on and the brightness is %.2f", this.getFurnitureType(), this.getVolume());
+    public String switchOn() throws InvalidToggleException {
+        try {
+            if (isOn) {
+                throw new InvalidToggleException(String.format("You can't turn the %s on because it is already on", this.getFurnitureType()));
+            }
+        }catch (InvalidToggleException e) {
+            System.out.println(e.getMessage());
+        }
+        isOn = true;
+        setVolume(getMaxVolume());
+        return String.format("This %s has been turned off and the brightness is %.2f", this.getFurnitureType(), this.getVolume());
     }
 
     @Override
-    public String switchOff() {
+    public String switchOff() throws InvalidToggleException {
+        try {
+            if (!isOn) {
+                throw new InvalidToggleException(String.format("You can't turn the %s off because it is already off", this.getFurnitureType()));
+            }
+        }catch (InvalidToggleException e) {
+            System.out.println(e.getMessage());
+        }
+        isOn = false;
         setVolume(0);
         return String.format("This %s has been turned off and the brightness is %.2f", this.getFurnitureType(), this.getVolume());
     }

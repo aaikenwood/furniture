@@ -47,13 +47,7 @@ public class App {
                 System.out.println("you attempted to turn on the devices");
             }
         }
-//        for(ISwitchable device : electronics){
-//            try{
-//                System.out.println(device.switchOn());
-//            }catch(Exception e){
-//                System.out.println(e);
-//            }
-//        }
+
         for(ISwitchable device : electronics){
             try {
                 System.out.println(device.switchOff());
@@ -66,6 +60,13 @@ public class App {
             }
         }
 
+        for(ISwitchable device : electronics){
+            try{
+                System.out.println(device.switchOn());
+            }catch(Exception e){
+                System.out.println(e);
+            }
+        }
 
     }
 }
