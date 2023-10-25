@@ -11,6 +11,7 @@ public class OfficeChair extends Chair{
         this.setFurnitureType("Office Chair");
         this.setRoom(ROOM.westminsterOffice);
         this.setRaceSpeed(raceSpeed);
+        this.setAcceleration(acceleration);
     }
     private double raceSpeed;
     private double acceleration;
@@ -30,7 +31,7 @@ public class OfficeChair extends Chair{
         this.acceleration = acceleration;
     }
 
-    private double calculateRaceDistance(double time) throws DangerousSpeedException {
+    public double calculateRaceDistance(double time) throws DangerousSpeedException {
         if (this.getRaceSpeed() > 30) throw new DangerousSpeedException("The speed of the office chair is too DANGEROUS!");
         this.distanceTravelled = this.raceSpeed * time + 0.5 * this.acceleration * time * time;
         return this.distanceTravelled;

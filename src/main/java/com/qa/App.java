@@ -55,16 +55,12 @@ public class App {
         OfficeChair archie = new OfficeChair(29, 14);
 
         try{
-            System.out.println(OfficeChair.chairRaceDistance(katie, archie, 100));
+            System.out.println(OfficeChair.chairRaceDistance(katie, archie, 1));
+//            System.out.println("Katie: " + katie.calculateRaceDistance(1) + " acc" + katie.getAcceleration());
+//            System.out.println("Archie: " + archie.calculateRaceDistance(1) + " acc" + archie.getAcceleration());
         }catch(Exception e){
             System.err.println(e.getMessage());
         }
-
-
-
-
-
-
 
 //        for(ISwitchable device : electronics){
 //            try {
