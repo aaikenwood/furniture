@@ -37,11 +37,28 @@ public class App {
         electronics.add(smallSpeaker);
 
         for(ISwitchable device : electronics){
-            System.out.println(device.switchOn());
+            try{
+                System.out.println(device.switchOn());
+            }catch(Exception e){
+                System.out.println(e);
+            }
         }
         for(ISwitchable device : electronics){
-            System.out.println(device.switchOff());
+            try{
+                System.out.println(device.switchOn());
+            }catch(Exception e){
+                System.out.println(e);
+            }
         }
+//        for(ISwitchable device : electronics){
+//            try{
+//                System.out.println(device.switchOff());
+//            }catch(Exception e){
+//                System.out.println(e);
+//            }
+//
+//        }
+
 
     }
 }
