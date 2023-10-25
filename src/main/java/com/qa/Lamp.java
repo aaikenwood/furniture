@@ -7,27 +7,25 @@ public class Lamp extends Furniture implements ISwitchable{
         this.maxBrightness = maxBrightness;
     }
 
+    private double brightness;
+    private double maxBrightness;
+
     public double getBrightness() {
         return brightness;
     }
-
     public void setBrightness(double brightness) {
         if (brightness >= 0 && brightness <= this.getMaxBrightness()) {
             this.brightness = brightness;
         }
     }
 
-    private double brightness;
-
     public double getMaxBrightness() {
         return maxBrightness;
     }
-
     public void setMaxBrightness(double maxBrightness) {
         this.maxBrightness = maxBrightness;
     }
 
-    private double maxBrightness;
     @Override
     public String assemble() {
         return "Attach light bulb to lamp and attach lamp shade";
